@@ -1,0 +1,35 @@
+.main-div-form {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #83ACAF;
+    height: auto;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid #969696;
+    margin-top: 100px;
+    box-shadow: 0 0 5px rgb(124, 124, 124);
+}
+
+.login_pop-up_window {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    background-color: #83ACAF;
+    position: relative;
+    top: 120px;
+}
+
+.login_close-btn {
+    position: relative;
+    bottom: 13px;
+    left: 26px;
+}
+
+.login_close-span {
+    height: 10px;
+    font-size: 30px;
+}
+
+.login_close-span:hover {
+    color: #707070;
+}

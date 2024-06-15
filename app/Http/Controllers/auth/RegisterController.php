@@ -20,10 +20,14 @@ class RegisterController extends Controller
             'name' => 'required',
             'surname' => 'required',
             'login' => 'required|unique:users',
-            'email' => 'required',
+            'email' => 'required|unique:users',
             'phone' => 'required|min:11|max:12',
-            'password' => 'required|min:8',
+            'password' => 'required|min:6',
             'password_repeat' => 'required|same:password'
+        ], [
+            'login' => 'Пользователь с таким логином уже существует',
+            'email' => 'Такой email уже занят',
+            'password_repeat' => 'пароли не совпадают'
         ]);
 
         User::create([

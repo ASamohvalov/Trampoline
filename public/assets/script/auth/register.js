@@ -8,6 +8,8 @@ const data = {
     phone: document.getElementById('phone'),
 };
 
+let isPasswordEntered = false, isPasswordValid = false;
+
 function activateButton() {
     let count = 0;
     for (let key in data) {
@@ -16,6 +18,7 @@ function activateButton() {
         }
     }
     !document.getElementById('checkbox').checked && count++;
+    !isPasswordValid && count++; 
 
     let btn = document.getElementById('submit-btn');
     if (count === 0) {
@@ -27,9 +30,20 @@ function activateButton() {
 
 function validateName(event) {
     const input = event.target.value;
-    const regex = /^[^\d]*$/; 
+    const regex = /^[^\d]*$/;
 
     if (!regex.test(input)) {
         event.target.value = input.replace(/\d/g, '');
+    }
+}
+
+function enterPassword(event) {
+    isPasswordEntered = true;
+    if (event.target.value.length < 6) {
+        isPasswordValid = false;
+        document.getElementById('password-error-msg').innerHTML = 'пароль должен быть не менее 6-ти символов';
+    } else {
+        isPasswordValid = true;
+        document.getElementById('password-error-msg').innerHTML = '';
     }
 }

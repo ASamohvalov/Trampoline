@@ -22,12 +22,12 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        $user = User::where('username', $request->username)->first();
+        $user = User::where('login', $request->login)->first();
         if (!$user || !Hash::check($request->password, $user->password)) {
             return redirect()->back()->withErrors(['error' => 'Incorrect username or password'])->withInput();
         }
         Auth::login($user);
 
-        // return redirect(route('userPage'));
+        return redirect(route('catalogPage'));
     }
 }

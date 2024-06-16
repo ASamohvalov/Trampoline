@@ -1,0 +1,16 @@
+.findus_title {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.findus_text {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.findus_image-map {
+    border: 1px solid #474747;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #b3b3b3;
+}

@@ -22,7 +22,7 @@
         @if ($errors->any())
             <div class="alert alert-dismissible fade show login_pop-up_window" role="alert"
                 style="background-color: #99645d;">
-                {{ $erorrs->first('error') }}
+                {{ $errors->first('error') }}
                 <button type="button" class="btn close login_close-btn">
                     <span aria-hidden="true" class="fs-2 login_close-span">&times;</span>
                 </button>
@@ -36,11 +36,11 @@
 
                 <div class="mb-3">
                     <label for="login" class="form-label">Логин</label>
-                    <input type="text" class="form-control" id="login" onchange="activateButton()">
+                    <input type="text" class="form-control" id="login" onchange="activateButton()" name="login">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Пароль</label>
-                    <input type="password" class="form-control" id="password" onchange="activateButton()">
+                    <input type="password" class="form-control" id="password" onchange="activateButton()" name="password">
                 </div>
                 <div class="text-center mt-5 mb-1">
                     <button type="submit" class="btn btn-light disabled" style="width: 120px;"

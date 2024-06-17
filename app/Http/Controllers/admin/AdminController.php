@@ -15,22 +15,28 @@ class AdminController extends Controller
 
     public function putCategory(Request $request)
     {
+        $request->validate([
+            'add_name' => 'required|unique:categories,name'
+        ], [
+            'add_name' => 'такая категория уже есть'
+        ]);
+
         $category = new Category();
-        $category->name = $request->name;
+        $category->name = $request->add_name;
         $category->save();
 
-        return redirect()->back()->with(['add_success' => "новая категория - $request->name добавлена"]);
+        return redirect()->back()->with(['add_success' => "новая категория - $request->add_name добавлена"]);
     }
 
     public function removeCategory(Request $request) 
     {
         $request->validate([
-            'name' => 'required|exists:categories'
+            'remove_name' => 'required|exists:categories,name'
         ], [
-            'name' => 'Такой категории нет'
+            'remove_name' => 'Такой категории нет'
         ]);
 
-        Category::where('name', $request->name)->delete();
-        return redirect()->back()->with(['remove_success' => "категория - $request->name удалена"]);
+        Category::where('name', $request->remove_name)->delete();
+        return redirect()->back()->with(['remove_success' => "категория - '$request->remove_name' удалена"]);
     }
 }

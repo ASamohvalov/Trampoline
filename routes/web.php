@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,12 +19,17 @@ Route::get('/about', function () {
     return view('pages.about');
 })->name('aboutPage');
 
-Route::get('/catalog', function () {
-    return view('pages.catalog');
-})->name('catalogPage');
+Route::get('/catalog', [ProductController::class, 'catalogPage'])->name('catalogPage');
 
 Route::get('/findus', function () {
     return view('pages.findus');
 })->name('pages.findusPage');
 
 Route::get('/logout', [WebController::class, 'logout'])->name('logout')->middleware('auth');
+
+Route::get('/admin', function () {
+    return view('pages.admin');
+})->name('adminPage');
+
+Route::post('/admin/new_category', [AdminController::class, 'putCategory'])->name('putCategory');
+Route::post('/admin/remove_category', [AdminController::class, 'removeCategory'])->name('removeCategory');

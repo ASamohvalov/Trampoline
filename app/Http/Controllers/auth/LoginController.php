@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         $user = User::where('login', $request->login)->first();
         if (!$user || !Hash::check($request->password, $user->password)) {
-            return redirect()->back()->withErrors(['error' => 'Incorrect username or password'])->withInput();
+            return redirect()->back()->withErrors(['error' => 'Неверный логин или пароль'])->withInput();
         }
         Auth::login($user);
 

@@ -38,6 +38,7 @@ class RegisterController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
+            'role' => 'user'
         ]);
 
         return redirect(route('loginPage'))->with('success', 'Пользователь успешно зарегестрирован');

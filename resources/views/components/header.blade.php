@@ -29,7 +29,7 @@
 
                     @auth
                         <li class="nav-item">
-                            <a href="/user" class="nav-link">
+                            <a href="{{ Auth::user()->isAdmin() ? '/admin' : '/user' }}" class="nav-link">
                                 {{ \Illuminate\Support\Facades\Auth::user()->login }}
                             </a>
                         </li>

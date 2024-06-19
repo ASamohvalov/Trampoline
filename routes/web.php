@@ -27,9 +27,7 @@ Route::get('/findus', function () {
 
 Route::get('/logout', [WebController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::get('/admin', function () {
-    return view('pages.admin');
-})->name('adminPage');
+Route::get('/admin', [AdminController::class, 'adminPage'])->name('adminPage');
 
 Route::post('/admin/new_category', [AdminController::class, 'putCategory'])->name('putCategory');
 Route::post('/admin/remove_category', [AdminController::class, 'removeCategory'])->name('removeCategory');

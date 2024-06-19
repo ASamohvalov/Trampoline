@@ -4,7 +4,7 @@
     <div class="mb-3">
         <label for="name" class="form-label">Добавить категорию</label>
         <div class="row">
-            <div class="col-9">
+            <div class="col-8">
                 <input type="text" class="form-control" id="add_name"
                     placeholder="Название новой категории" name="add_name" onchange="addCategory(event)">
             </div>
@@ -26,7 +26,7 @@
     <div class="mb-3">
         <label for="name" class="form-label">Удалить категорию</label>
         <div class="row">
-            <div class="col-9">
+            <div class="col-8">
                 <input type="text" class="form-control" id="remove_name" placeholder="Название категории"
                     name="remove_name" onchange="removeCategory(event)">
             </div>

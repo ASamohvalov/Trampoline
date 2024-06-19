@@ -4,13 +4,15 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function adminPage()
     {
-        return view('admin.admin');
+        $category = Category::all();
+        return view('pages.admin', ['categories' => $category]);
     }
 
     public function putCategory(Request $request)
@@ -28,7 +30,7 @@ class AdminController extends Controller
         return redirect()->back()->with(['add_success' => "новая категория - $request->add_name добавлена"]);
     }
 
-    public function removeCategory(Request $request) 
+    public function removeCategory(Request $request)
     {
         $request->validate([
             'remove_name' => 'required|exists:categories,name'
@@ -38,5 +40,16 @@ class AdminController extends Controller
 
         Category::where('name', $request->remove_name)->delete();
         return redirect()->back()->with(['remove_success' => "категория - '$request->remove_name' удалена"]);
+    }
+
+    public function putProduct(Request $request)
+    {
+        $request->validate([
+            'new_product_name' => 'required|unique:products,name',
+            'price' => 'required',
+            'description' => 'required'
+        ]);
+
+        return redirect()->back()->with(['new_product_success' => "Продукт добавлен"]);
     }
 }

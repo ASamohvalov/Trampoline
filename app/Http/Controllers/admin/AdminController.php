@@ -27,7 +27,7 @@ class AdminController extends Controller
         $category->name = $request->add_name;
         $category->save();
 
-        return redirect()->back()->with(['add_success' => "новая категория - $request->add_name добавлена"]);
+        return redirect()->back()->with(['add_success' => "новая категория - '$request->add_name' добавлена"]);
     }
 
     public function removeCategory(Request $request)
@@ -47,9 +47,23 @@ class AdminController extends Controller
         $request->validate([
             'new_product_name' => 'required|unique:products,name',
             'price' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'categoty' => 'required'
+        ]);
+
+        $id_category = Category::select('id')->where('name', '=', $request->category)->get();
+        Products::insert([
+            'name' => $request->name, 
+            'price' => $request->price, 
+            'description' => $request->description,
+            'id_category' => $id_category
         ]);
 
         return redirect()->back()->with(['new_product_success' => "Продукт добавлен"]);
+    }
+
+    public function removeProduct(Request $request) 
+    {
+        
     }
 }

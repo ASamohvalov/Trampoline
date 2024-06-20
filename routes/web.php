@@ -9,12 +9,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/about');
 
+// log in
 Route::get('/register', [RegisterController::class, 'registerPage'])->name('registerPage');
 Route::get('/login', [LoginController::class, 'loginPage'])->name('loginPage');
-
 Route::post('/register', [RegisterController::class, 'registration'])->name('registration');
 Route::post('/login', [LoginController::class, 'authorization'])->name('authorization');
 
+// pages
 Route::get('/about', function () {
     return view('pages.about');
 })->name('aboutPage');
@@ -29,5 +30,9 @@ Route::get('/logout', [WebController::class, 'logout'])->name('logout')->middlew
 
 Route::get('/admin', [AdminController::class, 'adminPage'])->name('adminPage');
 
+// admin
 Route::post('/admin/new_category', [AdminController::class, 'putCategory'])->name('putCategory');
 Route::post('/admin/remove_category', [AdminController::class, 'removeCategory'])->name('removeCategory');
+
+Route::post('/admin/new_product', [AdminController::class, 'putProduct'])->name('putProduct');
+Route::post('/admin/remove_product', [AdminController::class, 'removeProduct'])->name('removeProduct');

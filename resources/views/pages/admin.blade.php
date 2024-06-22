@@ -32,7 +32,7 @@
     </style>
 
     <main>
-        <div class="admin_main-div" style="width:700px;">
+        <div class="admin_main-div" style="width:700px; margin-top: 150px;">
             <div class="admin_main-div_header">
                 <div class="row pt-1" style="padding-left: 140px; padding-right: 140px;">
                     <div class="col text-center">
@@ -61,7 +61,7 @@
                 </div>
             </div>
 
-            <div id="product" style="display: none">
+            <div id="product" style="display: none;">
                 @include('components.admin.product')
             </div>
 

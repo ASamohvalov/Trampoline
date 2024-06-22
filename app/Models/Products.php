@@ -14,13 +14,16 @@ class Products extends Model
         'name',
         'description',
         'price',
-        'id_category'
+        'id_category',
+        'image'
     ];
 
     protected $casts = [
         'id_category' => 'integer',
         'price' => 'integer'
     ];
+
+    public $timestamps = false;
 
     public function category(): BelongsTo
     {

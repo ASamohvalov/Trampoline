@@ -37,3 +37,6 @@ Route::post('/admin/remove_category', [AdminController::class, 'removeCategory']
 
 Route::post('/admin/new_product', [AdminController::class, 'putProduct'])->name('putProduct');
 Route::post('/admin/remove_product', [AdminController::class, 'removeProduct'])->name('removeProduct');
+
+// products
+Route::get('/product/{id}', [ProductController::class, 'productPage'])->name('productPage');

@@ -13,12 +13,12 @@
             <div class="catalog_main-container_div">
                 <div class="catalog_products">
                     @foreach ($products as $product)
-                        <a href="product.html" class="catalog_product">
-                            <img src="{{ asset($product['image']) }}" class="catalog_product_img">
+                        <a href="/product/{{ $product->id }}" class="catalog_product">
+                            <img src="{{ asset($product->image) }}" class="catalog_product_img">
                             <div class="mx-3 mb-4 text-dark">
-                                <div class="catalog_product_name fs-5">{{ $product['name'] }}</div>
-                                <div class="catalog_product_name">{{ $product['category']['name'] }}</div>
-                                <div class="catalog_product_name">{{ $product['price'] }} руб/час</div>
+                                <div class="catalog_product_name fs-5">{{ $product->name }}</div>
+                                <div class="catalog_product_name">{{ $product->category->name }}</div>
+                                <div class="catalog_product_name">{{ $product->price }} руб/час</div>
                             </div>
                         </a>
                     @endforeach

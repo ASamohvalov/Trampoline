@@ -1,0 +1,32 @@
+.product_main-container_div {
+    margin-top: 40px;
+    background-color: #83ACAF;
+    border-radius: 10px;
+    border: 1px solid #969696;
+    padding: 70px;
+}
+
+.product_image_img {
+    height: 400px;
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.product_description_category {
+    color: #474747;
+}
+
+.product_description_description {
+    display: grid;
+    align-items: end;
+    height: 320px;
+}
+
+.product_to-basket_btn {
+    width: 200px;
+
+    &:hover {
+        background-color: #969696;
+    }
+}

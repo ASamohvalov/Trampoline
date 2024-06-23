@@ -33,7 +33,7 @@
                 </select>
             </div>
             <div class="col">
-                <button class="btn btn-light" type="submit" id="remove-category-btn">Удалить</button>
+                <button class="btn btn-light @if (count($categories) == 0) disabled @endif" type="submit" id="remove-category-btn">Удалить</button>
             </div>
         </div>
         @error('remove_name')

@@ -15,6 +15,10 @@ class Products extends Model
         'description',
         'price',
         'id_category',
+        'size',
+        'power_consumption',
+        'capacity',
+        'installation_time',
         'image'
     ];
 

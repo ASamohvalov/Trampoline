@@ -31,7 +31,7 @@
 
         <div class="main-div-form" style="margin-top: 150px;">
             <div class="text-center fs-3">Авторизация</div>
-            <form action="" method="post" class="p-4">
+            <form action="{{ route('authorization') }}" method="post" class="p-4">
                 @csrf
 
                 <div class="mb-3">

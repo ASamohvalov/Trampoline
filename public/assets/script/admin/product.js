@@ -17,10 +17,9 @@ let validator = {
     installationTime: false
 };
 
-function validateFields() {1
+function validateFields() {
     if (validator != {}) {
         for (key in validator) {
-            console.log(validator[key]);
             if (!validator[key]) {
                 btn.className = "btn btn-light mt-3 m-1 disabled";
                 return;

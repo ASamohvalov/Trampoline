@@ -25,8 +25,12 @@ Route::get('/catalog', [ProductController::class, 'catalogPage'])->name('catalog
 
 Route::get('/findus', function () {
     return view('pages.findus');
-})->name('pages.findusPage');
+})->name('findusPage');
 
+Route::get('/conditions', function () {
+    return view('pages.conditions');
+})->name('conditionsPage');
+ 
 Route::get('/logout', [WebController::class, 'logout'])->name('logout')->middleware('auth');
 
 

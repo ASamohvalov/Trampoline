@@ -10,7 +10,13 @@ class ProductController extends Controller
     public function catalogPage()
     {
         $products = Products::all();
-        return view('pages.catalog', ['products' => $products]);
+        $categories = [];
+        foreach ($products as $product) {
+            if (!in_array($product->category, $categories)) {
+                $categories[] = $product->category;
+            }
+        }
+        return view('pages.catalog', ['products' => $products, 'categories' => $categories]);
     }
 
     public function productPage($id)

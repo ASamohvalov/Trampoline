@@ -9,7 +9,7 @@
     @include('components.header')
 
     <main>
-        <div class="main-div-form">
+        <div class="main-div-form" style="margin-top: 170px;">
             <div class="text-center fs-3">Регистрация</div>
             <form action="{{ route('registration') }}" method="post" class="p-4">
                 @csrf

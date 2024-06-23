@@ -9,7 +9,7 @@
     @include('components.header')
 
     <main>
-        <div class="container">
+        <div class="container" style="margin-top: 70px;">
             <div class="findus_title">Где нас найти?</div>
             <div class="row mt-4">
                 <div class="col findus_text">

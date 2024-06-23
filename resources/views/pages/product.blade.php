@@ -57,10 +57,10 @@
                     </div>
                     <div class="row">
                         <div class="col mt-4">
-                            Размер батута /д-ш-в/: 3х3х2 метра <br>
-                            Потребляемая мощность: 2 Квт - 220v <br>
-                            вместимость: до 5 человек <br>
-                            время монтажа: 30 минут
+                            Размер батута /д-ш-в/: {{ $product->size }} метра <br>
+                            Потребляемая мощность: {{ $product->power_consumption }} <br>
+                            вместимость: {{ $product->capacity }} <br>
+                            время монтажа: {{ $product->installation_time }}
                         </div>
                         <div class="col product_to-basket mt-5 text-center">
                             <a href="" class="btn btn-light btn-lg product_to-basket_btn">В корзину</a>

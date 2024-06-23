@@ -32,7 +32,7 @@
     </style>
 
     <main>
-        <div class="admin_main-div" style="width:700px; margin-top: 150px;">
+        <div class="admin_main-div" style="width:700px; margin-top: 200px;">
             <div class="admin_main-div_header">
                 <div class="row pt-1" style="padding-left: 140px; padding-right: 140px;">
                     <div class="col text-center">

@@ -14,6 +14,10 @@
             background-color: #83ACAF;
             display: inline-block;
         }
+
+        main {
+            margin-top: 100px; 
+        }
     </style>
 
     <main>

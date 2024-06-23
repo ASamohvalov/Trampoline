@@ -50,6 +50,10 @@ class AdminController extends Controller
             'price' => 'required',
             'description' => 'required',
             'category' => 'required',
+            'size' => 'required',
+            'power_consumption' => 'required',
+            'capacity' => 'required',
+            'installation_time' => 'required',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048'
         ], [
             'new_product_name' => 'Название продукта должно быть уникальным',
@@ -62,6 +66,10 @@ class AdminController extends Controller
             'price' => $request->price,
             'description' => $request->description,
             'id_category' => $id_category,
+            'size' => $request->size,
+            'power_consumption' => $request->power_consumption,
+            'capacity' => $request->capacity,
+            'installation_time' => $request->installation_time,
             'image' => $this->fileProcess($request->image)
         ]);
 

@@ -49,7 +49,7 @@
             </div>
             <div class="col">
                 <div class="input-group mb-3 m-1">
-                    <input type="text" class="form-control" name="product_power_consumption" id="product_power_consumption" placeholder="Потребляемая мощность">
+                    <input type="text" class="form-control" name="power_consumption" id="product_power_consumption" placeholder="Потребляемая мощность">
                 </div>
             </div>
         </div>
@@ -58,8 +58,8 @@
             <div class="col">
                 <div class="input-group mb-3 m-1">
                     <span class="input-group-text" id="inputGroup-sizing-default">Вместимость</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" name="product_capacity" 
-                        id="capacity">
+                    <input type="text" class="form-control" aria-label="Sizing example input" name="capacity" 
+                        id="product_capacity">
                 </div>
             </div>
             <div class="col">

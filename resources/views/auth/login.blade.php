@@ -9,7 +9,30 @@
 @section('content')
     @include('components.header')
 
-    <main>
+    <style>
+        .main-div-form {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #83ACAF;
+            height: auto;
+            width: 500px;
+            border-radius: 10px;
+            border: 1px solid #969696;
+            box-shadow: 0 0 5px rgb(124, 124, 124);
+            margin-top: 40px; 
+        }
+
+        .login_pop-up_window {
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+            background-color: #5d9976;
+            position: relative;
+            top: 20px;
+        }
+    </style>
+
+    <main style="margin-top: 200px;">
         @if (session('success'))
             <div class="alert alert-dismissible fade show login_pop-up_window" role="alert"
                 style="background-color: #5d9976;">
@@ -29,7 +52,7 @@
             </div>
         @endif
 
-        <div class="main-div-form" style="margin-top: 150px;">
+        <div class="main-div-form">
             <div class="text-center fs-3">Авторизация</div>
             <form action="{{ route('authorization') }}" method="post" class="p-4">
                 @csrf

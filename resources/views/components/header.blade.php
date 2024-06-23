@@ -1,5 +1,5 @@
 <header>
-    <div class="container">
+    <div class="container fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-border">
             <div class="container-fluid">
                 <ul class="navbar-nav">

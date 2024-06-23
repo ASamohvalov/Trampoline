@@ -1,0 +1,18 @@
+.conditions_main-content {
+    display: inline-table;
+    margin-top: 20px;
+    width: 630px;
+    background-color: #83ACAF;
+    border-radius: 10px;
+    border: 1px solid #969696;
+    padding: 25px;
+}
+
+.conditions_content-top {
+    margin-top: 30px;
+    height: 400px;
+}
+
+.conditions_content-bottom {
+    height: 300px;
+}

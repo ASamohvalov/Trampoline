@@ -1,6 +1,6 @@
 <header>
     <div class="container fixed-top">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-border">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-header navbar-border">
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -20,10 +20,10 @@
                 <ul class="navbar-nav ms-auto">
                     @guest
                         <li class="nav-item">
-                            <a href="/login" class="nav-link">Sign in</a>
+                            <a href="/login" class="nav-link">Авторизация</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/register" class="nav-link">Sign up</a>
+                            <a href="/register" class="nav-link">Регистрация</a>
                         </li>
                     @endguest
 

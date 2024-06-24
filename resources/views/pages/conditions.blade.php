@@ -10,7 +10,7 @@
 
     <main>
         <div class="container" style="margin-top: 70px;">
-            <div class="conditions_main-content conditions_content-top" style="margin-right: 30px;">
+            <div class="conditions_main-content conditions_content-top" style="margin-right: 30px; background-color: #9c9e80; color: #f9f4ea;">
                 <span class="fs-3 fw-bold">Условия доставки</span>
                 <div class="fs-5 mt-3">
                     Мы осуществляем доставку нашего оборудования по Москве и области по следующим условиям: доставка по
@@ -19,7 +19,7 @@
                     Доставка в другие районы оговаривается отдельно.
                 </div>
             </div>
-            <div class="conditions_main-content conditions_content-top">
+            <div class="conditions_main-content conditions_content-top" style="background-color: #9c9e80; color: #f9f4ea;">
                 <span class="fs-3 fw-bold">Условия оплаты</span>
                 <div class="fs-5 mt-3">
                     Наличными или безналичным переводом на расчетный счет компании. При наличном способе оплаты
@@ -29,7 +29,7 @@
                     При безналичной форме оплаты 100% предоплата и надбавка в размере 7% к стоимости аренды.
                 </div>
             </div>
-            <div class="conditions_main-content conditions_content-bottom" style="margin-right: 30px;">
+            <div class="conditions_main-content conditions_content-bottom" style="margin-right: 30px; background-color: #9c9e80; color: #f9f4ea;">
                 <span class="fs-3 fw-bold">Состояние батутов</span>
                 <div class="fs-5 mt-3">
                     Мы тщательно следим за сохранностью нашего оборудования. Все батуты в идеальном состоянии, т.е.
@@ -37,7 +37,7 @@
                     обновлениями и стараемся радовать заказчиков новинками.
                 </div>
             </div>
-            <div class="conditions_main-content conditions_content-bottom">
+            <div class="conditions_main-content conditions_content-bottom" style="background-color: #9c9e80; color: #f9f4ea;">
                 <span class="fs-3 fw-bold">Дезинфекция батутов и оборудования</span>
                 <div class="fs-5 mt-3">
                     Перед выездом на площадку наше оборудование проходит антивирусную обработку, специальными

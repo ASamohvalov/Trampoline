@@ -6,12 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Products;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File; 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
 {
     public function adminPage()
     {
+        if (!Auth::user()->isAdmin()) {
+            return redirect('/user');
+        }
         $categories = Category::all();
         $products = Products::all();
         return view('pages.admin', ['categories' => $categories, 'products' => $products]);
@@ -20,7 +24,7 @@ class AdminController extends Controller
     public function putCategory(Request $request)
     {
         $request->validate([
-            'add_name' => 'required|unique:categories,name'
+            'add_name' => 'required|unique:categories,name|max:155'
         ], [
             'add_name' => 'такая категория уже есть'
         ]);
@@ -90,8 +94,8 @@ class AdminController extends Controller
         $product->where('name', $request->remove_product_name)->delete();
         return redirect()->back()->with(['remove_product_success' => 'Продукт удален']);
     }
-    
-    
+
+
     private function fileProcess($file)
     {
         $extension = $file->getClientOriginalExtension();
@@ -99,9 +103,9 @@ class AdminController extends Controller
         $file->move(public_path('/assets/images/product'), $filename);
         return '/assets/images/product/' . $filename;
     }
-    
+
     private function fileRemove($filename)
-    {       
+    {
         File::delete(public_path($filename));
     }
 }

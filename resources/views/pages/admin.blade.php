@@ -11,29 +11,29 @@
     <style>
         .category-list {
             height: 300px;
-            background-color: #749c87;
+            background-color: #605f4b;
             padding: 10px;
             overflow: hidden;
             overflow-y: scroll;
             border-bottom-right-radius: 10px;
+            border-left: 1px solid #f9f4ea;
         }
 
         .category-list_categ {
             width: 150px;
             margin-left: auto;
             margin-right: auto;
-            background-color: #da5a41;
+            background-color: #c47457;
             color: white;
             margin-bottom: 10px;
             text-align: center;
-            box-shadow: 0 0 5px black;
             border-radius: 5px;
         }
     </style>
 
     <main>
-        <div class="admin_main-div" style="width:700px; margin-top: 200px;">
-            <div class="admin_main-div_header">
+        <div class="admin_main-div" style="width:700px; margin-top: 200px; background-color: #9c9e80; color: #f9f4ea">
+            <div class="admin_main-div_header" style="background-color: #605f4b; border-bottom: 1px solid #f9f4ea">
                 <div class="row pt-1" style="padding-left: 140px; padding-right: 140px;">
                     <div class="col text-center">
                         <button class="btn text-dark" id="category-btn">Category</button>
@@ -53,7 +53,7 @@
                         <div class="category-list">
                             @foreach($categories as $category)
                                 <div class="category-list_categ">
-                                    {{ $category['name'] }}
+                                    {{ $category->name }}
                                 </div>
                             @endforeach
                         </div>

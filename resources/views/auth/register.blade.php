@@ -8,8 +8,14 @@
 @section('content')
     @include('components.header')
 
+    <style>
+        .error-text {
+            color: #ff4141;
+        }
+    </style>
+
     <main>
-        <div class="main-div-form" style="margin-top: 170px;">
+        <div class="main-div-form" style="margin-top: 170px; background-color: #9c9e80; color: #f9f4ea;">
             <div class="text-center fs-3">Регистрация</div>
             <form action="{{ route('registration') }}" method="post" class="p-4">
                 @csrf

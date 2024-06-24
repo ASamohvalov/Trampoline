@@ -30,7 +30,11 @@ Route::get('/findus', function () {
 Route::get('/conditions', function () {
     return view('pages.conditions');
 })->name('conditionsPage');
- 
+
+Route::get('/user', function () {
+    return view('pages.user');
+})->name('userPage');
+
 Route::get('/logout', [WebController::class, 'logout'])->name('logout')->middleware('auth');
 
 

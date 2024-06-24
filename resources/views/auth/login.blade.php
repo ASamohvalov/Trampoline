@@ -13,13 +13,14 @@
         .main-div-form {
             margin-left: auto;
             margin-right: auto;
-            background-color: #83ACAF;
+            background-color: #9c9e80;
             height: auto;
             width: 500px;
             border-radius: 10px;
             border: 1px solid #969696;
             box-shadow: 0 0 5px rgb(124, 124, 124);
-            margin-top: 40px; 
+            margin-top: 40px;
+            color: #f9f4ea;
         }
 
         .login_pop-up_window {
@@ -30,12 +31,16 @@
             position: relative;
             top: 20px;
         }
+
+        .color-success-msg {
+            background-color: #b68036;
+            color: #f9f4ea;
+        }
     </style>
 
     <main style="margin-top: 200px;">
         @if (session('success'))
-            <div class="alert alert-dismissible fade show login_pop-up_window" role="alert"
-                style="background-color: #5d9976;">
+            <div class="alert alert-dismissible fade show login_pop-up_window color-success-msg" role="alert">
                 {{ session('success') }}
                 <button type="button" class="btn close login_close-btn">
                     <span aria-hidden="true" class="fs-2 login_close-span">&times;</span>
@@ -44,7 +49,7 @@
         @endif
         @if ($errors->any())
             <div class="alert alert-dismissible fade show login_pop-up_window" role="alert"
-                style="background-color: #99645d;">
+                style="background-color: #c47457; color: #f9f4ea">
                 {{ $errors->first('error') }}
                 <button type="button" class="btn close login_close-btn">
                     <span aria-hidden="true" class="fs-2 login_close-span">&times;</span>

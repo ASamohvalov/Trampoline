@@ -24,4 +24,10 @@ class ProductController extends Controller
         $product = Products::find($id);
         return view('pages.product', ['product' => $product]);
     }
+
+    public function makeRequest($id_product) 
+    {
+        $product = Products::find($id_product);
+        return view('pages.request', ['product' => $product]);
+    }
 }

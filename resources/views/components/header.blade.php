@@ -34,7 +34,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/logout" class="nav-link">logout</a>
+                            <a href="/logout" class="nav-link">Выход</a>
                         </li>
                     @endauth
                 </ul>

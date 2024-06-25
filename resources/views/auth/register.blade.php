@@ -74,7 +74,7 @@
                 <div class="form-check mt-3">
                     <input class="form-check-input" type="checkbox" id="checkbox" onchange="activateButton()">
                     <label class="form-check-label" for="checkbox">
-                        Согласие на обработку данных
+                        Согласие с правилами регистрации
                     </label>
                 </div>
                 <div class="text-center mt-4 mb-2">

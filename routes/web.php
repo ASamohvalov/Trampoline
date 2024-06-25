@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/about');
 
 // log in
-Route::get('/register', [RegisterController::class, 'registerPage'])->name('registerPage');
-Route::get('/login', [LoginController::class, 'loginPage'])->name('loginPage');
+Route::get('/register', [RegisterController::class, 'registerPage'])->name('register');
+Route::get('/login', [LoginController::class, 'loginPage'])->name('login');
 Route::post('/register', [RegisterController::class, 'registration'])->name('registration');
 Route::post('/login', [LoginController::class, 'authorization'])->name('authorization');
 
@@ -31,12 +31,12 @@ Route::get('/conditions', function () {
     return view('pages.conditions');
 })->name('conditionsPage');
 
-Route::get('/user', function () {
-    return view('pages.user');
-})->name('userPage');
-
 Route::get('/logout', [WebController::class, 'logout'])->name('logout')->middleware('auth');
 
+// user
+Route::get('/user', function () {
+    return view('pages.user');
+})->name('userPage')->middleware('auth');
 
 // admin
 Route::get('/admin', [AdminController::class, 'adminPage'])->name('adminPage');
@@ -48,3 +48,4 @@ Route::post('/admin/remove_product', [AdminController::class, 'removeProduct'])-
 
 // products
 Route::get('/product/{id}', [ProductController::class, 'productPage'])->name('productPage');
+Route::get('/product/placing/{id_product}', [ProductController::class, 'makeRequest'])->name('makeRequest');

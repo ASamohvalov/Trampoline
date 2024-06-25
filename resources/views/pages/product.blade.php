@@ -28,7 +28,8 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block w-100" style="background-color: #f9f4ea; border-radius: 10px;" src="{{ $product->image }}" alt="Первый слайд">
+                                        <img class="d-block w-100" style="background-color: #f9f4ea; border-radius: 10px;"
+                                            src="{{ $product->image }}" alt="Первый слайд">
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block w-100" src="" alt="Второй слайд">
@@ -38,12 +39,12 @@
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                                   data-slide="prev">
+                                    data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
                                 <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                                   data-slide="next">
+                                    data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
@@ -70,7 +71,8 @@
                             время монтажа: {{ $product->installation_time }}
                         </div>
                         <div class="col product_to-basket mt-5 text-center">
-                            <a href="" class="btn btn-light btn-lg product_to-basket_btn" style="background-color: #f9f4ea">В корзину</a>
+                            <a href="/product/placing/{{ $product->id }}" class="btn btn-light btn-lg product_to-basket_btn"
+                                style="background-color: #f9f4ea">Заказать</a>
                         </div>
                     </div>
                 </div>

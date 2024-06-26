@@ -48,4 +48,5 @@ Route::post('/admin/remove_product', [AdminController::class, 'removeProduct'])-
 
 // products
 Route::get('/product/{id}', [ProductController::class, 'productPage'])->name('productPage');
-Route::get('/product/placing/{id_product}', [ProductController::class, 'makeRequest'])->name('makeRequest');
+Route::get('/product/placing/{id_product}', [ProductController::class, 'makeRequest'])->name('makeRequest')->middleware('auth');
+Route::post('/product/placing/{id_product}/send', [ProductController::class, 'sendOrder'])->name('sendOrder');

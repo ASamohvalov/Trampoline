@@ -17,6 +17,12 @@
             border: 1px solid rgb(61, 61, 61);
             border-radius: 10px;
         }
+
+        .order-li {
+            border: 1px solid rgb(75, 75, 75);
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
     </style>
 
     <main>
@@ -30,16 +36,30 @@
                         <li class="fs-5">{{ Auth::user()->login }}</li>
                         <li class="fs-5">{{ Auth::user()->email }}</li>
                         <li class="fs-5">{{ Auth::user()->phone }}</li>
-                        <li>
-                            <button class="btn btn-sm bg-card-product mt-2">Изменить</button>
-                        </li>
                     </ul>
                 </div>
                 <div class="user_main-div_applications">
+                    <div class="text-center fs-2 mt-5 mb-3">Заказы</div>
                     <ul>
-                        <li>
-                            
-                        </li>
+                        @foreach ($orders as $order)
+                            <li class="order-li">
+                                <a href="">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <img src="{{ asset($order->product->image) }}" alt="product-img"
+                                                style="height: 70px" class="mx-4">
+                                        </div>
+                                        <div class="col">
+                                            <ul>
+                                                <li>{{ $order->product->name }}</li>
+                                                <li>{{ $order->price }}</li>
+                                                <li>статус - {{ $order->status }}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
 

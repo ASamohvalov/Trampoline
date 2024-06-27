@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -34,9 +35,8 @@ Route::get('/conditions', function () {
 Route::get('/logout', [WebController::class, 'logout'])->name('logout')->middleware('auth');
 
 // user
-Route::get('/user', function () {
-    return view('pages.user');
-})->name('userPage')->middleware('auth');
+Route::get('/user', [UserController::class, 'userPage'])->name('userPage')->middleware('auth');
+
 
 // admin
 Route::get('/admin', [AdminController::class, 'adminPage'])->name('adminPage');

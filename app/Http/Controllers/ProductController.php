@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function catalogPage()
     {
-        $products = Products::all();
+        $products = Products::latest()->get();
         $categories = [];
         foreach ($products as $product) {
             if (!in_array($product->category, $categories)) {
@@ -70,6 +70,8 @@ class ProductController extends Controller
             'passport_issue_by' => $request->passport_issue_by,
             'price' => $final_price
         ]);
+
+        return redirect('/user');
     }
 
     private function calculateDiscount($h)

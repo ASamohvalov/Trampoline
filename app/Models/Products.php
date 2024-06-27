@@ -27,8 +27,6 @@ class Products extends Model
         'price' => 'integer'
     ];
 
-    public $timestamps = false;
-
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'id_category');

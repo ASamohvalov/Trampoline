@@ -11,7 +11,6 @@ class Order extends Model
     use HasFactory;
 
     protected $table = 'Orders';
-    public $timestamps = false;
 
     protected $fillable = [
         'id_user',

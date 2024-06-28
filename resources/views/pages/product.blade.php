@@ -76,6 +76,8 @@
                         </div>
                     </div>
                 </div>
+
+                @include('components.product.calculator')
             </div>
         </div>
     </main>

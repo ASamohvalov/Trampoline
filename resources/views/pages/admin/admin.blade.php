@@ -29,6 +29,10 @@
             text-align: center;
             border-radius: 5px;
         }
+
+        ul {
+            list-style: none;
+        }
     </style>
 
     <main>
@@ -36,10 +40,13 @@
             <div class="admin_main-div_header" style="background-color: #605f4b; border-bottom: 1px solid #f9f4ea">
                 <div class="row pt-1" style="padding-left: 140px; padding-right: 140px;">
                     <div class="col text-center">
-                        <button class="btn text-dark" id="category-btn">Category</button>
+                        <button class="btn text-dark" id="category-btn">Категории</button>
                     </div>
                     <div class="col text-center">
-                        <button class="btn text-light" id="product-btn">Product</button>
+                        <a href="{{ route('ordersPage') }}" class="btn text-light" id="">Заказы</a>
+                    </div>
+                    <div class="col text-center">
+                        <button class="btn text-light" id="product-btn">Продукты</button>
                     </div>
                 </div>
             </div>
@@ -51,7 +58,7 @@
                     </div>
                     <div class="col">
                         <div class="category-list">
-                            @foreach($categories as $category)
+                            @foreach ($categories as $category)
                                 <div class="category-list_categ">
                                     {{ $category->name }}
                                 </div>

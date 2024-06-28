@@ -33,7 +33,7 @@
         <div class="container" style="margin-top: 100px;">
             <div class="catalog_main-container_div bg-card">
                 <div class="catalog_main-container-filter-header">
-                    <img class="header-icon" src="https://img.icons8.com/?size=50&id=3004&format=png">
+                    <img class="header-icon" src="{{ asset('assets/images/view/filter.png') }}">
                     <input type="text" class="form-control filter-input" placeholder="Название товара" id="name_filter">
                     <select class="form-select filter-input">
                         <option>Все категории</option>

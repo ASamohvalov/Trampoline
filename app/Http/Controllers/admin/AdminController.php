@@ -18,7 +18,7 @@ class AdminController extends Controller
         }
         $categories = Category::all();
         $products = Products::all();
-        return view('pages.admin', ['categories' => $categories, 'products' => $products]);
+        return view('pages.admin.admin', ['categories' => $categories, 'products' => $products]);
     }
 
     public function putCategory(Request $request)

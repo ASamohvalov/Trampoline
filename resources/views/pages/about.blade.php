@@ -18,6 +18,28 @@
         main {
             margin-top: 100px;
         }
+
+        #text-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #text-carousel .carousel-item {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #text-carousel h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #text-carousel p {
+            font-size: 18px;
+        }
     </style>
 
     <main>
@@ -38,7 +60,43 @@
                         горок, каруселей делает услуги аренды и проката аттракционов применимой для любого праздника!
                     </p>
                 </div>
-                <div class="about_reviews">
+
+                <div class="card-body">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            @foreach ($reviews as $index => $review)
+                                <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}"
+                                    class="{{ $index == 0 ? 'active' : '' }}"></li>
+                            @endforeach
+                        </ol>
+                        <div class="carousel-inner bg-dark">
+                            @foreach ($reviews as $index => $review)
+                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h4 class="text-white">{{ $review->user->name }}</h4>
+                                                <p class="text-white">{{ $review->review }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            {{-- <div class="about_reviews">
                     <div class="rewiew-cards">
                         <div class="card text-white mb-3 rewiew-card rewiew-card_style" style="background-color: #9c9e80;">
                             <div class="card-header color-card">20.12.2020</div>
@@ -73,8 +131,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> --}}
+        </div>
         </div>
     </main>
+
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 @endsection

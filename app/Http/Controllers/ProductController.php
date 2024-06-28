@@ -76,18 +76,19 @@ class ProductController extends Controller
 
     private function calculateDiscount($h)
     {
-        $discount = [
-            5 => [3, 4],
-            10 => [5, 7],
-            15 => [8, 11],
-            20 => [12, PHP_INT_MAX]
-        ];
-
-        foreach ($discount as $key => $value) {
-            if ($value[0] >= $h && $value[1] <= $h) {
-                return $key;
-            }
+        $discount = 0;
+        $h = floor($h);
+        
+        if ($h >= 3 && $h <= 4) {
+            $discount = 5;
+        } else if ($h >= 5 && $h <= 7) {
+            $discount = 10;
+        } else if ($h >= 8 && $h <= 11) {
+            $discount = 15;
+        } else if ($h >= 12) {
+            $discount = 20;
         }
-        return 0;
+        
+        return $discount;
     }
 }
